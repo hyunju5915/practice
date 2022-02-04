@@ -1,0 +1,149 @@
+/*
+ * web/app client
+ * Javascript name : hanalog.js
+ * Author          : obzen.co.kr
+ * version         : 20201030
+ */
+
+  function HanaLog(logName) {
+
+    const url = 'https://inf-log.hanatour.com:17340/log'; 
+    let logMap = {};
+    logName = "CUST-ACTION";
+	
+    var log = checkLogName(logName);
+    if(log  === null) {
+      return;
+    }
+    else {
+      logMap["logname"] = log;
+    }
+
+    let logData = {};
+    logMap["logdata"] = logData;
+    setCommonItem();
+
+    function setItemFromKV(key, value) {
+      if(key == 'WL') {
+         console.log(value);
+         preProcess(value);
+      }
+      else {
+        logData[key] = value;
+      }
+    }
+
+    function setItemFromDOM(docObj) {
+      logData[docObj.name] = docObj.value;
+    }
+
+    function sendLog() {
+      // console.log(logData);
+      if(logName && isEmpty(logData)) {
+        axios({
+          method: 'post',
+          url:    url,
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          data: JSON.stringify(logMap)
+        });
+        console.log(logData);
+      }
+    }
+
+    function setCommonItem() {
+      var currDate = new Date();
+      var dateString = currDate.getUTCFullYear() + "" +
+            ("0" + (currDate.getUTCMonth()+1)).slice(-2) + "" +
+            ("0" + currDate.getUTCDate()).slice(-2) + "" +
+            ("0" + currDate.getUTCHours()).slice(-2) + "" +
+            ("0" + currDate.getUTCMinutes()).slice(-2) + "" +
+            ("0" + currDate.getUTCSeconds()).slice(-2);
+      logData["connHms"] = dateString;
+
+      logData["prevPage"] = document.referrer;
+	  // logData["prevPage"] = decodeURI(document.referrer);
+      logData["curConnUrl"] = window.location.href;
+      // logData["curConnUrl"] = decodeURI(window.location.href);	  
+
+      var client = new ClientJS();
+
+      logData["osName"] = client.getOS();
+      logData["osVersion"] = client.getOSVersion();
+      logData["userAgent"] =   client.getUserAgent();
+      logData["browserEngine"] = client.getBrowser();
+      logData["browserVersion"] =  client.getBrowserVersion();
+
+      // console.log(client.isMobile());
+      if(client.isMobile()) {
+        logData["userDevice"] =  client.getDeviceType();
+      }
+      else {
+        //pc
+        console.log("You are using Desktop");
+        // logData["userDevice"] =  client.getDevice();
+        logData["userDevice"] =  "PC";
+      }
+    }
+
+    function preProcess(param) {
+
+      var comm = JSON.parse(param);
+      logData["siteId"] =  comm.siteId;
+      logData["sessionId"] =  comm.sessionId;
+      logData["uid"] =  comm.uid;
+      logData["uidx"] =  comm.uidx;
+      logData["userIp"] =  comm.userIp;
+      logData["lat"] =  comm.lat;
+      logData["lon"] =  comm.lon;
+      logData["resPathCd"] =  comm.resPathCd;
+
+      console.log(param);
+	  console.log(comm);
+	  }
+
+    function checkLogName(logName) {
+
+      var str = logName.toUpperCase(logName);
+
+//      var pattern_spc = /[~!@#$%^&*()_+|<>?:{}]/;
+//      if( (pattern_spc.test(logName))) {
+        return str;
+//      }
+//      else {
+//        return null;
+//      }
+    }
+
+
+    function getCookie(name) {
+      var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      if (match) {
+        console.log(match[2]);
+        return match[2];
+      }
+      else{
+		console.log("no cookies:"+name);
+        return "";
+      }
+   }
+
+
+    function isEmpty(object) {
+      for(var i in object) {
+        return true;
+      }
+
+      return false;
+    }
+
+    var publicAPI = {
+      setItemFromKV : setItemFromKV,
+      setItemFromDOM : setItemFromDOM,
+      sendLog : sendLog
+    };
+
+    return publicAPI;
+  }
+  

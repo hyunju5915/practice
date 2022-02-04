@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 제이쿼리자리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+    <!-- 외부제이쿼리 & 외부CSS & 웹폰트 & 폰트어썸st -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <!-- 슬릭슬라이드     -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- 외부제이쿼리 & 외부CSS & 웹폰트 & 폰트어썸en -->
+    <!-- 내가 만든 css js는 맨 아래 있어야 한다 -->
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js"></script>
+</head>
+<body>
+
+    <div class="top-bar-wrap">
+        <div class="global-menu-wrap con1200 row">
+            <ul class="cell-r row">
+                <li class="cell"><a href="#">로그인</a></li>
+                <li class="cell"><a href="#">회원가입</a></li>
+                <li class="cell"><a href="#">고객센터</a></li>
+            </ul>
+        </div>
+        <div class="local-menu-wrap con1200 row">
+            <div class="logo-box cell">
+                <a href="#"></a>
+            </div>
+            <div class="search-box cell row">
+                <input type="text cell" placeholder="검색어를 입력해 주세요">
+                <div class="search-icon cell-r">
+                    <img src="./img/ico-search.png" alt="">
+                </div>
+            </div>
+            <div class="hot-box cell">
+                <div class="slider">
+                    <div class="content"><p>제주도</p></div>
+                    <div class="content"><p>사이판</p></div>
+                    <div class="content"><p>괌</p></div>
+                    <div class="content"><p>하와이</p></div>
+                    <div class="content"><p>일본</p></div>
+                    <div class="content"><p>스페인</p></div>
+                    <div class="content"><p>울릉도</p></div>
+                    <div class="content"><p>신화월드</p></div>
+                    <div class="content"><p>터키</p></div>
+                    <div class="content"><p>몰디브</p></div>
+                </div>
+            </div>
+            <div class="icon-box cell-r">
+                <ul class="row">
+                    <li class="cell"><a href="#">
+                        <img src="./img/ico-mymenu.png" alt="">
+                        <p>마이메뉴</p>
+                    </a></li>
+                    <li class="cell"><a href="#">
+                        <img src="./img/ico-reservationhistory.png" alt="">
+                        <p>예약내역</p>
+                    </a></li>
+                    <li class="cell"><a href="#">
+                        <img src="./img/ico-haeder-choice.png" alt="">
+                        <p>찜</p>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-wrap">
+            <ul class="row con1200">
+                <li class="all-menu-box cell"><a href="#">
+                    <!-- <img class="cell" src="./img/ico-hamburgermenu.png" alt="">     -->
+                    <p>전체메뉴</p>
+                </a></li>
+                <li class="cell h-over"><a class="h-over" href="#">해외여행</a></li>
+                <li class="cell h-over content" number="0">
+                    <a href="#">제주/국내여행</a>
+                </li>
+                <li class="cell h-over"><a href="#">항공</a></li>
+                <li class="cell h-over content" number="1"><a href="#">호텔/펜션</a></li>
+                <li class="cell h-over content" number="2"><a href="#">투어/입장권</a></li>
+                <li class="cell h-over content" number="3"><a href="#">테마여행</a></li>
+                <li class="cell h-over"><a href="#">럭셔리여행</a></li>
+                <li class="cell h-over"><a href="#">하나LIVE</a></li>
+                <li class="cell-r"><a href="#">기업여행</a></li>
+                <li class="cell-r"><a href="#">여행기획전</a></li>
+            </ul>
+        </div>
+        <div class="nav-2-depth-wrap">
+            <div class="all-menu-content">
+                <div class="all-menu-wrap con1200 row">
+                    <ul class="row cell">
+                        <li class="cell"><a href="#">해외여행</a></li>
+                        <li class="cell"><a href="#">제주/국내여행</a>
+                            <ul>
+                                <li><a href="#">국내여행</a></li>
+                                <li><a href="#">제주여행</a></li>
+                                <li><a href="#">제주렌트카</a></li>
+                                <li><a href="#">기차예약</a></li>
+                                <li><a href="#">국내골프</a></li>
+                            </ul>
+                        </li>
+                        <li class="cell"><a href="#">항공</a>
+                            <ul>
+                                <li><a href="#">항공예약</a></li>
+                            </ul>
+                        </li>
+                        <li class="cell"><a href="#">호텔/펜션</a>
+                            <ul>
+                                <li><a href="#">호텔예약</a></li>
+                                <li><a href="#">펜션/풀빌라예약</a></li>
+                            </ul>
+                        </li>
+                        <li class="cell"><a href="#">연계서비스</a>
+                            <ul>
+                                <li><a href="#">전문가 여행기</a></li>
+                                <li><a href="#">전문가 여행기</a></li>
+                                <li><a href="#">전문가 여행기</a></li>
+                                <li><a href="#">전문가 여행기</a></li>
+                                <li><a href="#">전문가 여행기</a></li>
+                                <li><a href="#">전문가 여행기</a></li>
+                            </ul>
+                        </li>
+                        <li class="cell"><a href="#">테마여행</a>
+                            <ul>
+                                <li><a href="#">허니문</a></li>
+                                <li><a href="#">골프</a></li>
+                            </ul>
+                        </li>
+                        <li class="cell"><a href="#">국내 단독여행문의</a></li>
+                        <li class="cell"><a href="#">투어/입장권</a></li>
+                        <li class="cell"><a href="#">럭셔리여행</a></li>
+                        <li class="cell"><a href="#">혜택/이벤트</a>
+                            <ul>
+                                <li><a href="#">제휴혜택</a></li>
+                                <li><a href="#">제휴혜택</a></li>
+                                <li><a href="#">제휴혜택</a></li>
+                                <li><a href="#">제휴혜택</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="clo-btn cell-r"></div>
+                </div>
+                
+            </div>
+            <div class="nav-2-depth-content">
+                <div class="jeju-content hover-content con1200">
+                    <ul class="row">
+                        <li class="cell"><a href="#">국내여행</a></li>
+                        <li class="cell"><a href="#">제주여행</a></li>
+                        <li class="cell"><a href="#">제주렌터카</a></li>
+                        <li class="cell"><a href="#">기차예약</a></li>
+                        <li class="cell"><a href="#">국내골프</a></li>
+                    </ul>
+                </div>
+                <div class="hotel-content hover-content con1200">
+                    <ul class="row">
+                        <li class="cell"><a href="#">호텔예약</a></li>
+                        <li class="cell"><a href="#">펜션/풀빌라예약</a></li>
+                    </ul>
+                </div>
+                <div class="tour-content hover-content con1200">
+                    <ul class="row">
+                        <li class="cell"><a href="#">제주</a></li>
+                        <li class="cell"><a href="#">서울</a></li>
+                        <li class="cell"><a href="#">경상</a></li>
+                        <li class="cell"><a href="#">경기</a></li>
+                        <li class="cell"><a href="#">전라</a></li>
+                        <li class="cell"><a href="#">강원</a></li>
+                        <li class="cell"><a href="#">충청</a></li>
+                    </ul>
+                </div>
+                <div class="thema-content hover-content con1200">
+                    <ul class="row">
+                        <li class="cell"><a href="#">허니문</a></li>
+                        <li class="cell"><a href="#">골프</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-section-wrap con2000">
+        <div class="main-color-slider">
+            <div class="color-content color-content01">
+                <div class="color-box"></div>
+            </div>
+            <div class="color-content color-content02">
+                <div class="color-box"></div>
+            </div>
+            <div class="color-content color-content03">
+                <div class="color-box"></div>
+            </div>
+            <div class="color-content color-content04">
+                <div class="color-box"></div>
+            </div>
+            <div class="color-content color-content05">
+                <div class="color-box"></div>
+            </div>
+            <div class="color-content color-content06">
+                <div class="color-box"></div>
+            </div>
+            <div class="color-content color-content07">
+                <div class="color-box"></div>
+            </div>
+            <div class="color-content color-content08">
+                <div class="color-box"></div>
+            </div>
+        </div>
+        <div class="main-section con1200 row">
+            <div class="main-left-section cell">
+                <div class="trip-box">
+                    <h2>고객님,<br>
+                        어떤 여행을 꿈꾸시나요?</h2>
+                    <div class="trip-nav">
+                        <ul class="row">
+                            <li class="cell active"><a href="#">패키지</a></li>
+                            <li class="cell"><a href="#">항공</a></li>
+                            <li class="cell"><a href="#">호텔</a></li>
+                        </ul>
+                    </div>
+                    <div class="trip-content">
+                        <div class="package-wrap active row">
+                            <input class="cell" type="text" placeholder="어디로 떠나세요?">
+                            <div class="depart-btn cell"><p>인천/김포 출발</p></div>
+                            <div class="st-day-btn cell"><p>여행시작일 선택</p></div>
+                            <div class="air-tic-btn cell"><p>항공권은<br>있어요</p></div>
+                            <div class="trip-with-btn cell"><p>우리끼리만<br>여행할래요</p></div>
+                            <div class="search-btn black-btn cell"><p>패키지 검색</p></div>
+                        </div>   
+                        <div class="air-wrap row">
+                            <div class="round-btn cell"><a href="#"><p>왕복</p></a></div>
+                            <div class="round-btn cell"><a href="#"><p>편도</p></a></div>
+                            <div class="round-btn cell"><a href="#"><p>다구간</p></a></div>
+                            <input class= "cell" type="text" placeholder="출발지">
+                            <div class="square-btn depart-btn cell">인천/김포</div>
+                            <div class="square-btn date-st-btn cell"><p>날짜</p></div>
+                            <div class="square-btn date-en-btn cell"><p>날짜</p></div>
+                            <div class="people-btn cell">성인 1명</div>
+                            <div class="str-box cell">직항</div>
+                            <div class="search-btn black-btn cell">항공권 검색</div>
+                        </div> 
+                        <div class="hotel-wrap">
+                            <input type="text"  placeholder="어디로 떠나세요?">
+                            <div class="date-btn">
+                                <a href="#"><p></p></a>
+                            </div>
+                            <div class="people-btn"><a href="#">객실1 * 성인 2명</a></div>
+                            <div class="search-btn black-btn"><a href="#">숙소 검색</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-right-section cell-r">
+                <div class="main-slider">
+                    <div class="main-img"><a href="#"><img src="./img/main_section_img01.jpg" alt=""></a></div>
+                    <div class="main-img"><a href="#"><img src="./img/main_section_img02.jpg" alt=""></a></div>
+                    <div class="main-img"><a href="#"><img src="./img/main_section_img03.jpg" alt=""></a></div>
+                    <div class="main-img"><a href="#"><img src="./img/main_section_img04.jpg" alt=""></a></div>
+                    <div class="main-img"><a href="#"><img src="./img/main_section_img05.jpg" alt=""></a></div>
+                    <div class="main-img"><a href="#"><img src="./img/main_section_img06.jpg" alt=""></a></div>
+                    <div class="main-img"><a href="#"><img src="./img/main_section_img07.jpg" alt=""></a></div>
+                    <div class="main-img"><a href="#"><img src="./img/main_section_img08.jpg" alt=""></a></div>
+                </div>
+                <div class="main-slider-btn-wrap row">
+                    <div class="prev-btn cell"><</div>
+                    <div class="next-btn cell">></div>
+                    <div class="play-btn cell">
+                        <p class="play active">▶</p>
+                        <p class="pause">■</p>
+                    </div>
+                    <div class="page-box cell"><span>1</span>/8</div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-wrap">
+        <div class="section section01 con1200">
+            <p class="main-title">연말에 방방곡곡 찾아 떠나는 여행</p>
+            <div class="item-wrap row">
+                <div class="item cell">
+                    <img src="./img/section02_img01.jpg" alt="">
+                    <p class="item-title">[서울] 소피텔 앰배서더 서울 호텔</p>
+                    <p class="item-sub-title">#연말객실확보 #프렌치모던럭셔리 #석촌호수</p>
+                    <div class="price-wrap">
+                        <span class="price">343,063</span><span class="price-won">원~</span>
+                    </div>
+                </div>
+                <div class="item cell">
+                    <img src="./img/section02_img02.jpg" alt="">
+                    <p class="item-title">[서울] 소피텔 앰배서더 서울 호텔</p>
+                    <p class="item-sub-title">#연말객실확보 #프렌치모던럭셔리 #석촌호수</p>
+                    <div class="price-wrap">
+                        <span class="price">343,063</span><span class="price-won">원~</span>
+                    </div>
+                </div>
+                <div class="item cell">
+                    <img src="./img/section02_img03.jpg" alt="">
+                    <p class="item-title">[서울] 소피텔 앰배서더 서울 호텔</p>
+                    <p class="item-sub-title">#연말객실확보 #프렌치모던럭셔리 #석촌호수</p>
+                    <div class="price-wrap">
+                        <span class="price">343,063</span><span class="price-won">원~</span>
+                    </div>
+                </div>
+                <div class="item cell">
+                    <img src="./img/section02_img04.jpg" alt="">
+                    <p class="item-title">[서울] 소피텔 앰배서더 서울 호텔</p>
+                    <p class="item-sub-title">#연말객실확보 #프렌치모던럭셔리 #석촌호수</p>
+                    <div class="price-wrap">
+                        <span class="price">343,063</span><span class="price-won">원~</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="section section02 con1200">
+            <div class="main-item">
+                <p>한국 귀국 후 <br>
+                    자가격리 없는 <br>
+                    해외여행</p>
+                <ul>
+                    <li class="active"><a href="#fake">탁 트인 푸른 바다, 사이판</a></li>
+                    <li><a href="#fake">부산에서 출발가능, 사이판</a></li>
+                    <li><a href="#fake">마리나베이샌즈, 싱가포르</a></li>
+                </ul>
+            </div>
+            <ul class="item-wrap">
+                <li class="item item01 row active">
+                    <div class="content cell">
+                        <a href="#">
+                            <div class="img-box">
+                                <img src="./img/section03_img02.jpg" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <p class="item-sub-title hashtag">
+                                    #PCR검사 #여행지원금 인당 100$ #1월한정
+                                </p>
+                                <p class="item-title">
+                                    사이판 하얏트호텔 자유여행 4,5일
+                                </p>
+                                <p class="item-sub-title sub-title">
+                                    사이판 하얏트호텔 자유여행 4,5일
+                                </p>
+                                <div class="price-wrap">
+                                    <span class="price">949,000</span><span class="price-won">원~</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="content cell">
+                        <a href="#">
+                            <div class="img-box">
+                                <img src="/img/section03_img03.jpg" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <p class="item-sub-title hashtag">
+                                    #PCR검사 #여행지원금 인당 100$ #1월한정
+                                </p>
+                                <p class="item-title">
+                                    사이판 월드리조트 자유여행 4,5일
+                                </p>
+                                <p class="item-sub-title sub-title">
+                                    최대규모 워터파크와 호텔식 1일 2식
+                                </p>
+                                <div class="price-wrap">
+                                    <span class="price">949,000</span><span class="price-won">원~</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="content cell">
+                        <a href="#">
+                            <div class="img-box">
+                                <img src="/img/section03_img04.jpg" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <p class="item-sub-title hashtag">
+                                    #PCR검사 #여행지원금 인당 100$ #1월한정
+                                </p>
+                                <p class="item-title">
+                                    사이판 켄싱턴호텔 자유여행 4,5일
+                                </p>
+                                <p class="item-sub-title sub-title">
+                                    전객실 오션뷰 & 커플 여행객 안성맞춤
+                                </p>
+                                <div class="price-wrap">
+                                    <span class="price">949,000</span><span class="price-won">원~</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="item item02 row">
+                    <div class="content cell">
+                        <a href="#">
+                            <div class="img-box">
+                                <img src="/img/section04_img02.jpg" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <p class="item-sub-title hashtag">
+                                    #PCR검사 #여행지원금 인당 100$ #1월한정
+                                </p>
+                                <p class="item-title">
+                                    사이판 하얏트호텔 자유여행 4,5일
+                                </p>
+                                <p class="item-sub-title sub-title">
+                                    사이판 하얏트호텔 자유여행 4,5일
+                                </p>
+                                <div class="price-wrap">
+                                    <span class="price">949,000</span><span class="price-won">원~</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="content cell">
+                        <a href="#">
+                            <div class="img-box">
+                                <img src="/img/section03_img03.jpg" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <p class="item-sub-title hashtag">
+                                    #PCR검사 #여행지원금 인당 100$ #1월한정
+                                </p>
+                                <p class="item-title">
+                                    사이판 월드리조트 자유여행 4,5일
+                                </p>
+                                <p class="item-sub-title sub-title">
+                                    최대규모 워터파크와 호텔식 1일 2식
+                                </p>
+                                <div class="price-wrap">
+                                    <span class="price">949,000</span><span class="price-won">원~</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="content cell">
+                        <a href="#">
+                            <div class="img-box">
+                                <img src="/img/section03_img04.jpg" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <p class="item-sub-title hashtag">
+                                    #PCR검사 #여행지원금 인당 100$ #1월한정
+                                </p>
+                                <p class="item-title">
+                                    사이판 켄싱턴호텔 자유여행 4,5일
+                                </p>
+                                <p class="item-sub-title sub-title">
+                                    전객실 오션뷰 & 커플 여행객 안성맞춤
+                                </p>
+                                <div class="price-wrap">
+                                    <span class="price">949,000</span><span class="price-won">원~</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="item item03 row">
+                    <div class="content cell">
+                        <a href="#">
+                            <div class="img-box">
+                                <img src="/img/section05_content_img.jpg" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <p class="item-sub-title hashtag">
+                                    #PCR검사 #여행지원금 인당 100$ #1월한정
+                                </p>
+                                <p class="item-title">
+                                    사이판 하얏트호텔 자유여행 4,5일
+                                </p>
+                                <p class="item-sub-title sub-title">
+                                    사이판 하얏트호텔 자유여행 4,5일
+                                </p>
+                                <div class="price-wrap">
+                                    <span class="price">949,000</span><span class="price-won">원~</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="content cell">
+                        <a href="#">
+                            <div class="img-box">
+                                <img src="/img/section03_img03.jpg" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <p class="item-sub-title hashtag">
+                                    #PCR검사 #여행지원금 인당 100$ #1월한정
+                                </p>
+                                <p class="item-title">
+                                    사이판 월드리조트 자유여행 4,5일
+                                </p>
+                                <p class="item-sub-title sub-title">
+                                    최대규모 워터파크와 호텔식 1일 2식
+                                </p>
+                                <div class="price-wrap">
+                                    <span class="price">949,000</span><span class="price-won">원~</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="content cell">
+                        <a href="#">
+                            <div class="img-box">
+                                <img src="/img/section03_img04.jpg" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <p class="item-sub-title hashtag">
+                                    #PCR검사 #여행지원금 인당 100$ #1월한정
+                                </p>
+                                <p class="item-title">
+                                    사이판 켄싱턴호텔 자유여행 4,5일
+                                </p>
+                                <p class="item-sub-title sub-title">
+                                    전객실 오션뷰 & 커플 여행객 안성맞춤
+                                </p>
+                                <div class="price-wrap">
+                                    <span class="price">949,000</span><span class="price-won">원~</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="section section03 con1200">
+            <div class="main-title">고객님만을 위한 추천여행</div>
+            <div class="slider">
+                <div class="content">
+                            <div class="img-box">
+                                <img src="./img/section04_img01.jpg" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <div class="item-sub-title">에어텔</div>
+                                <div class="item-title">사이판 5일 #하얏트리젠시 #시내중심 #가든뷰 #호텔조식 #자유여행</div>
+                                <div class="price-wrap">
+                                    <span class="price">500,000</span><span class="price-won">원~</span>
+                                </div>
+                            </div>
+                </div>
+                <div class="content">
+                            <div class="img-box">
+                                <img src="./img/section04_img01.jpg" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <div class="item-sub-title">에어텔</div>
+                                <div class="item-title">사이판 5일 #하얏트리젠시 #시내중심 #가든뷰 #호텔조식 #자유여행</div>
+                                <div class="price-wrap">
+                                    <span class="price">500,000</span><span class="price-won">원~</span>
+                                </div>
+                            </div>
+                </div>
+                <div class="content">
+                            <div class="img-box">
+                                <img src="./img/section04_img01.jpg" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <div class="item-sub-title">에어텔</div>
+                                <div class="item-title">사이판 5일 #하얏트리젠시 #시내중심 #가든뷰 #호텔조식 #자유여행</div>
+                                <div class="price-wrap">
+                                    <span class="price">500,000</span><span class="price-won">원~</span>
+                                </div>
+                            </div>
+                </div>
+                <div class="content">
+                            <div class="img-box">
+                                <img src="./img/section04_img01.jpg" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <div class="item-sub-title">에어텔</div>
+                                <div class="item-title">사이판 5일 #하얏트리젠시 #시내중심 #가든뷰 #호텔조식 #자유여행</div>
+                                <div class="price-wrap">
+                                    <span class="price">500,000</span><span class="price-won">원~</span>
+                                </div>
+                            </div>
+                </div>
+                <div class="content">
+                            <div class="img-box">
+                                <img src="./img/section04_img01.jpg" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <div class="item-sub-title">에어텔</div>
+                                <div class="item-title">사이판 5일 #하얏트리젠시 #시내중심 #가든뷰 #호텔조식 #자유여행</div>
+                                <div class="price-wrap">
+                                    <span class="price">500,000</span><span class="price-won">원~</span>
+                                </div>
+                            </div>
+                </div>
+            </div>
+            <div class="btn left-btn"></div>
+            <div class="btn right-btn"></div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+@charset "utf-8";
+/*
+<UPLEAT> UI Dev Team
+{Oh Young Ju}, {An Se Jung}, {Lee Yun Hee}, Hwang Mi Ae, Kim So Young, Cho Han Sol, {Kang Young Sun}
+commnet : pc man
+ */
+
+.pop_content .sevice_info {
+  border: 1px #ddd solid;
+  padding: 30px 20px;
+  margin-bottom: 30px;
+  color: #666;
+}
+.pop_content .sevice_info .inr.ico {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 70px;
+}
+.pop_content .sevice_info .inr.ico:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  vertical-align: top;
+  width: 56px;
+  height: 56px;
+  background: url('https://image.hanatour.com/usr/static/img2/pc/man/spr_man.png');
+  background-position: 0 -235px;
+}
+.pop_content .sevice_info .inr > .tit {
+  font-size: 24px;
+  color: #111;
+  line-height: 32px;
+}
+.pop_content .sevice_info .inr > .tit + em {
+  display: block;
+  font-size: 13px;
+}
+.pop_content .sevice_info .inr > em + p {
+  padding-top: 16px;
+  color: #666666;
+  font-size: 13px;
+}
+.pop_content .sevice_info .inr.right > .tit.s {
+  font-size: 15px;
+  display: inline-block;
+}
+.pop_content .sevice_info .inr.right > p + .tit.s {
+  margin-top: 15px;
+}
+.pop_content .sevice_info + .js_acc .tbl th.pop_content .sevice_info + .js_acc .tbl th th,
+.pop_content .sevice_info + .js_acc .tbl td {
+  vertical-align: top;
+}
+.pop_content .sevice_info + .js_acc .tbl em,
+.pop_content .sevice_info + .js_acc .header > em {
+  display: inline-block;
+  vertical-align: top;
+  width: 16px;
+  height: 16px;
+  color: #5e2bb8;
+  border: 1px #5e2bb8 solid;
+  border-radius: 50%;
+  line-height: 13px;
+  text-align: center;
+  font-size: 10px;
+  margin-top: 3px;
+}
+.pop_content .sevice_info + .js_acc .tbl em.bk,
+.pop_content .sevice_info + .js_acc .header > em.bk {
+  border: 1px #111 solid;
+}
+.pop_content .sevice_info + .js_acc .header > em + span {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 3px;
+  font-size: 17px;
+}
+.pop_content .sevice_info + .js_acc .tbl em + span {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 120px;
+  padding-left: 2px;
+}
+.pop_content .sevice_info + .js_acc .tbl em + span.wide {
+  max-width: 300px;
+}
+.pop_content .sevice_info + .js_acc .tbl tbody tr td:last-child > em {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 0;
+}
+.pop_content .sevice_info + .js_acc .tbl tbody tr td:last-child > em + span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.pop_content .sevice_info + .js_acc .tbl span.next {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  font-size: 0;
+  background: url('https://image.hanatour.com/usr/static/img2/pc/com/spr_com.png') no-repeat;
+  background-position: -270px -52px;
+  margin: 0 3px;
+}
+.pop_content .sevice_info .tooltip .tooltiptext {
+  min-width: 225px;
+}
+
+/* ie cross*/
+.msie .pop_content .sevice_info + .js_acc .tbl tbody tr td:last-child > em {
+  margin-top: 1px;
+}

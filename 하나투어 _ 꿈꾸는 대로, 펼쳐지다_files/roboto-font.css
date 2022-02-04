@@ -1,0 +1,42 @@
+﻿/* 
+2020-01-14 Quasar 기본 설정 폰트 제거. JES
+PC - font-family:'Noto Sans KR', 'Malgun Gothic', 'AppleSDGothicNeo', Arial, Helvetica, serif , sans-serif;
+MO - font-family:'AppleSDGothicNeo-Regular','DroidSansFallback','Apple Gothic','HelveticaNeue-Regular',sans-serif;
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: url(./web-font/KFOkCnqEu92Fr1MmgVxIIzQ.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url(./web-font/KFOlCnqEu92Fr1MmSU5fBBc-.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./web-font/KFOmCnqEu92Fr1Mu4mxM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(./web-font/KFOlCnqEu92Fr1MmEU9fBBc-.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url(./web-font/KFOlCnqEu92Fr1MmWUlfBBc-.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(./web-font/KFOlCnqEu92Fr1MmYUtfBBc-.woff) format('woff');
+}
+*/

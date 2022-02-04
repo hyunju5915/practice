@@ -1,0 +1,629 @@
+@charset "UTF-8";
+.Npay_SDK_blind {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+}
+
+.Npay_point_color {
+	color: #00c73c;
+}
+
+.Npay_SDK_dimmed {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 2147483447;
+}
+
+.Npay_SDK_layer {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	z-index: 2147483647;
+	box-sizing: border-box;
+	font-family: HelveticaNeue-Light, Helvetica, AppleSDGothicNeo-Regular, "나눔고딕", nanumgothic, sans-serif;
+	font-size: 14px;
+	-webkit-font-smoothing: subpixel-antialiased;
+	line-height: 18px;
+}
+
+.Npay_SDK_layer a, .Npay_SDK_layer a:hover, .Npay_SDK_layer a:active, .Npay_SDK_layer a:focus {
+	text-decoration: none;
+}
+
+.Npay_SDK_layer em {
+	font-style: normal;
+}
+
+.Npay_SDK_layer .Npay_btn_close {
+	position: absolute;
+	right: 0;
+	top: -28px;
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -140px -112px;
+	width: 20px;
+	height: 20px;
+}
+
+.Npay_SDK_layer .Npay_layer_inner {
+	padding: 20px;
+	background-color: #e9ecef;
+}
+
+.Npay_SDK_layer.Npay_SDK_progress {
+	margin-left: -80px;
+	margin-top: -50px;
+	text-align: center;
+}
+
+.Npay_SDK_layer.Npay_SDK_simple {
+	margin-left: -150px;
+	margin-top: -189px;
+}
+
+.Npay_SDK_layer.Npay_SDK_payment {
+	margin-left: -375px;
+	margin-top: -400px;
+}
+
+.Npay_SDK_layer.Npay_SDK_payment .Npay_layer_inner {
+	padding: 0;
+	background-color: transparent;
+}
+
+.Npay_SDK_layer.Npay_SDK_payment .Npay_btn_close {
+	position: absolute;
+	right: 0;
+	top: -40px;
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: 0px -284px;
+	width: 30px;
+	height: 30px;
+}
+
+.Npay_SDK_layer.Npay_SDK_payment iframe {
+	background-color: #fff;
+	display: block;
+}
+
+.Npay_SDK_layer .Npay_SDK_loading {
+	display: block;
+	width: 32px;
+	height: 8px;
+	background: url(../img/naverpay_sdk_square_x1.gif) no-repeat 0 0;
+	margin: 26px 44px;
+}
+
+.Npay_SDK_layer .Npay_SDK_login {
+	width: 260px;
+	text-align: center;
+}
+
+.Npay_SDK_layer .Npay_SDK_login .Npay_SDK_product {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-bottom: 9px;
+}
+
+.Npay_SDK_layer .Npay_SDK_login .Npay_btn_login {
+	display: table;
+	width: 260px;
+	height: 50px;
+	background-color: #00c73c;
+	margin-top: 16px;
+}
+
+.Npay_SDK_layer .Npay_SDK_login .Npay_btn_login .Npay_btn_inner {
+	display: table-cell;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 16px;
+}
+
+.Npay_SDK_layer .Npay_SDK_login .Npay_btn_login .Npay_btn_inner:before {
+	content: '';
+	display: inline-block;
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -140px -90px;
+	width: 68px;
+	height: 12px;
+	margin: 2px 8px 0 0;
+	vertical-align: top;
+}
+
+.Npay_SDK_layer .Npay_SDK_login .Npay_btn_login .Npay_btn_inner.text:before {
+	display: none;
+}
+
+.Npay_SDK_layer .Npay_SDK_info {
+	font-size: 16px;
+	color: #292929;
+	font-weight: bold;
+}
+
+.Npay_SDK_layer .Npay_SDK_logo {
+	display: block;
+	margin: 0 auto;
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: 0px -260px;
+	width: 56px;
+	height: 22px;
+}
+
+.Npay_SDK_layer .Npay_SDK_logo + .Npay_SDK_info {
+	padding: 48px 0 36px;
+}
+
+.Npay_SDK_layer .Npay_SDK_guide {
+	margin: 0;
+	padding: 0;
+	color: #8f8f8f;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.Npay_SDK_layer._Npay_SDK_payment_effect {
+	position: fixed;
+	visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	margin-left: auto;
+	margin-top: auto;
+}
+
+.Npay_SDK_layer._Npay_SDK_payment_effect .Npay_layer_inner {
+	-webkit-transform: translateY(20%);
+	-moz-transform: translateY(20%);
+	-ms-transform: translateY(20%);
+	transform: translateY(20%);
+	opacity: 0;
+	-webkit-transition: transform 0.3s;
+	-moz-transition: transform 0.3s;
+	-ms-transition: transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.Npay_SDK_layer._Npay_SDK_payment_effect_on {
+	visibility: visible;
+}
+
+.Npay_SDK_layer._Npay_SDK_payment_effect_on .Npay_layer_inner {
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.Npay_sdk_payment_btn {
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	box-sizing: border-box;
+	line-height: 0;
+	font-size: 0;
+}
+
+.Npay_sdk_payment_btn:after {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	width: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
+.Npay_sdk_payment_btn .Npay_logo {
+	display: block;
+	margin: auto;
+}
+
+.Npay_txt_payment {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	width: 1px;
+	height: 1px;
+	color: transparent;
+}
+
+.Npay_sdk_payment_inner {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.Npay_type_green.Npay_btn_sizes .Npay_sdk_payment_btn,
+.Npay_type_green.Npay_btn_sizexl .Npay_sdk_payment_btn {
+	border: 1px solid #00ba38;
+}
+
+.Npay_type_green .Npay_sdk_payment_btn {
+	background-color: #00c73c;
+	border: 1px solid #00c73c;
+}
+
+.Npay_type_white .Npay_sdk_payment_btn {
+	background-color: #fff;
+	border: 1px solid #d0d4d9;
+}
+
+.Npay_type_disabled .Npay_sdk_payment_btn {
+	background-color: #b8b8b8;
+	border: 1px solid #b8b8b8;
+}
+
+.Npay_btn_sizes .Npay_sdk_payment_btn {
+	width: 151px;
+	height: 37px;
+	line-height: 37px;
+}
+
+.Npay_btn_sizem .Npay_sdk_payment_btn {
+	width: 150px;
+	height: 44px;
+	line-height: 44px;
+	border-radius: 2px;
+}
+
+.Npay_btn_sizel .Npay_sdk_payment_btn {
+	width: 180px;
+	height: 44px;
+	line-height: 44px;
+	border-radius: 2px;
+}
+
+.Npay_btn_sizexl .Npay_sdk_payment_btn {
+	width: 168px;
+	height: 58px;
+	line-height: 58px;
+}
+
+.Npay_payment_box {
+	display: inline-block;
+	font-family: HelveticaNeue-Light, Helvetica, AppleSDGothicNeo-Regular, "나눔고딕", nanumgothic, sans-serif;
+	font-size: 14px;
+	-webkit-font-smoothing: subpixel-antialiased;
+	line-height: 18px;
+}
+
+.Npay_payment_box a, .Npay_payment_box a:hover, .Npay_payment_box a:active, .Npay_payment_box a:focus {
+	text-decoration: none;
+}
+
+.Npay_payment_box.Npay_type_green.Npay_btn_sizes .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -123px -134px;
+	width: 88px;
+	height: 17px;
+}
+
+.Npay_payment_box.Npay_type_green.Npay_btn_sizem .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: 0px -223px;
+	width: 100px;
+	height: 18px;
+}
+
+.Npay_payment_box.Npay_type_green.Npay_btn_sizel .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: 0px -90px;
+	width: 138px;
+	height: 20px;
+}
+
+.Npay_payment_box.Npay_type_green.Npay_btn_sizexl .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -222px -111px;
+	width: 118px;
+	height: 22px;
+}
+
+.Npay_payment_box.Npay_type_white.Npay_btn_sizes .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: 0px -243px;
+	width: 86px;
+	height: 15px;
+}
+
+.Npay_payment_box.Npay_type_white.Npay_btn_sizem .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -102px -203px;
+	width: 100px;
+	height: 18px;
+}
+
+.Npay_payment_box.Npay_type_white.Npay_btn_sizel .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: 0px -182px;
+	width: 137px;
+	height: 19px;
+}
+
+.Npay_payment_box.Npay_type_white.Npay_btn_sizexl .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: 0px -134px;
+	width: 121px;
+	height: 22px;
+}
+
+.Npay_payment_box.Npay_type_disabled.Npay_btn_sizes .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -88px -243px;
+	width: 86px;
+	height: 15px;
+}
+
+.Npay_payment_box.Npay_type_disabled.Npay_btn_sizem .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -222px -159px;
+	width: 100px;
+	height: 18px;
+}
+
+.Npay_payment_box.Npay_type_disabled.Npay_btn_sizel .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: 0px -112px;
+	width: 138px;
+	height: 20px;
+}
+
+.Npay_payment_box.Npay_type_disabled.Npay_btn_sizexl .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -222px -87px;
+	width: 118px;
+	height: 22px;
+}
+
+.Npay_regular_box {
+	display: inline-block;
+	font-family: HelveticaNeue-Light, Helvetica, AppleSDGothicNeo-Regular, "나눔고딕", nanumgothic, sans-serif;
+	font-size: 14px;
+	-webkit-font-smoothing: subpixel-antialiased;
+	line-height: 18px;
+}
+
+.Npay_regular_box a, .Npay_regular_box a:hover, .Npay_regular_box a:active, .Npay_regular_box a:focus {
+	text-decoration: none;
+}
+
+.Npay_regular_box.Npay_type_green.Npay_btn_sizes .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -123px -158px;
+	width: 88px;
+	height: 17px;
+}
+
+.Npay_regular_box.Npay_type_green.Npay_btn_sizem .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -222px -179px;
+	width: 100px;
+	height: 18px;
+}
+
+.Npay_regular_box.Npay_type_green.Npay_btn_sizel .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -222px -21px;
+	width: 137px;
+	height: 19px;
+}
+
+.Npay_regular_box.Npay_type_green.Npay_btn_sizexl .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -222px -63px;
+	width: 118px;
+	height: 22px;
+}
+
+.Npay_regular_box.Npay_type_white.Npay_btn_sizes .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -102px -223px;
+	width: 87px;
+	height: 15px;
+}
+
+.Npay_regular_box.Npay_type_white.Npay_btn_sizem .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -204px -203px;
+	width: 100px;
+	height: 18px;
+}
+
+.Npay_regular_box.Npay_type_white.Npay_btn_sizel .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -222px -42px;
+	width: 137px;
+	height: 19px;
+}
+
+.Npay_regular_box.Npay_type_white.Npay_btn_sizexl .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: 0px -158px;
+	width: 121px;
+	height: 22px;
+}
+
+.Npay_regular_box.Npay_type_disabled.Npay_btn_sizes .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -191px -223px;
+	width: 87px;
+	height: 15px;
+}
+
+.Npay_regular_box.Npay_type_disabled.Npay_btn_sizem .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: 0px -203px;
+	width: 100px;
+	height: 18px;
+}
+
+.Npay_regular_box.Npay_type_disabled.Npay_btn_sizel .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -222px 0px;
+	width: 137px;
+	height: 19px;
+}
+
+.Npay_regular_box.Npay_type_disabled.Npay_btn_sizexl .Npay_logo {
+	background-image: url(../img/sprite/sp_naverpay_sdk.png);
+	background-position: -222px -135px;
+	width: 118px;
+	height: 22px;
+}
+
+@media all and (min-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+	.Npay_SDK_loading {
+		background: url(../img/naverpay_sdk_square_x2.gif) no-repeat 0 0;
+		background-size: 32px auto;
+	}
+	.Npay_payment_box .Npay_sdk_payment_btn {
+		color: #fff;
+	}
+	.Npay_payment_box .Npay_sdk_payment_btn .Npay_logo {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 8px;
+	}
+	.Npay_payment_box .Npay_txt_payment {
+		overflow: visible;
+		position: static;
+		clip: auto;
+		width: auto;
+		height: auto;
+		color: inherit;
+		vertical-align: middle;
+		font-weight: 600;
+		font-size: 17px;
+		line-height: 21px;
+	}
+	.Npay_payment_box.Npay_type_green .Npay_sdk_payment_btn {
+		background-color: #00c73c;
+		border: 1px solid #00ba38;
+	}
+	.Npay_payment_box.Npay_type_white .Npay_sdk_payment_btn {
+		background-color: #fff;
+		border: 1px solid #d0d4d9;
+		color: #00c73c;
+	}
+	.Npay_payment_box.Npay_type_disabled .Npay_sdk_payment_btn {
+		background-color: #b8b8b8;
+		border: 1px solid #b8b8b8;
+	}
+	.Npay_payment_box.Npay_btn_sizes .Npay_sdk_payment_btn {
+		padding: 11px 12px;
+		border-radius: 3px;
+	}
+	.Npay_payment_box.Npay_btn_sizem .Npay_sdk_payment_btn, .Npay_payment_box.Npay_btn_sizel .Npay_sdk_payment_btn, .Npay_payment_box.Npay_btn_sizexl .Npay_sdk_payment_btn {
+		padding: 9px 27px;
+		border-radius: 0;
+	}
+	.Npay_payment_box.Npay_type_green.Npay_btn_sizes .Npay_logo {
+		background-image: url(../img/sprite/sp_naverpay_sdk.png);
+		background-size: 180px 157px;
+		background-position: -57px 0px;
+		width: 53px;
+		height: 21px;
+	}
+	.Npay_payment_box.Npay_type_green.Npay_btn_sizem .Npay_logo {
+		background-image: url(../img/sprite/sp_naverpay_sdk.png);
+		background-size: 180px 157px;
+		background-position: -57px 0px;
+		width: 53px;
+		height: 21px;
+	}
+	.Npay_payment_box.Npay_type_green.Npay_btn_sizel .Npay_logo {
+		background-image: url(../img/sprite/sp_naverpay_sdk.png);
+		background-size: 180px 157px;
+		background-position: -57px 0px;
+		width: 53px;
+		height: 21px;
+	}
+	.Npay_payment_box.Npay_type_green.Npay_btn_sizexl .Npay_logo {
+		background-image: url(../img/sprite/sp_naverpay_sdk.png);
+		background-size: 180px 157px;
+		background-position: -57px 0px;
+		width: 53px;
+		height: 21px;
+	}
+	.Npay_payment_box.Npay_type_white.Npay_btn_sizes .Npay_logo {
+		background-image: url(../img/sprite/sp_naverpay_sdk.png);
+		background-size: 180px 157px;
+		background-position: -57px -22px;
+		width: 53px;
+		height: 21px;
+	}
+	.Npay_payment_box.Npay_type_white.Npay_btn_sizem .Npay_logo {
+		background-image: url(../img/sprite/sp_naverpay_sdk.png);
+		background-size: 180px 157px;
+		background-position: -57px -22px;
+		width: 53px;
+		height: 21px;
+	}
+	.Npay_payment_box.Npay_type_white.Npay_btn_sizel .Npay_logo {
+		background-image: url(../img/sprite/sp_naverpay_sdk.png);
+		background-size: 180px 157px;
+		background-position: -57px -22px;
+		width: 53px;
+		height: 21px;
+	}
+	.Npay_payment_box.Npay_type_white.Npay_btn_sizexl .Npay_logo {
+		background-image: url(../img/sprite/sp_naverpay_sdk.png);
+		background-size: 180px 157px;
+		background-position: -57px -22px;
+		width: 53px;
+		height: 21px;
+	}
+	.Npay_payment_box.Npay_type_disabled.Npay_btn_sizes .Npay_logo {
+		background-image: url(../img/sprite/sp_naverpay_sdk.png);
+		background-size: 180px 157px;
+		background-position: 0px -23px;
+		width: 53px;
+		height: 21px;
+	}
+	.Npay_payment_box.Npay_type_disabled.Npay_btn_sizem .Npay_logo {
+		background-image: url(../img/sprite/sp_naverpay_sdk.png);
+		background-size: 180px 157px;
+		background-position: 0px -23px;
+		width: 53px;
+		height: 21px;
+	}
+	.Npay_payment_box.Npay_type_disabled.Npay_btn_sizel .Npay_logo {
+		background-image: url(../img/sprite/sp_naverpay_sdk.png);
+		background-size: 180px 157px;
+		background-position: 0px -23px;
+		width: 53px;
+		height: 21px;
+	}
+	.Npay_payment_box.Npay_type_disabled.Npay_btn_sizexl .Npay_logo {
+		background-image: url(../img/sprite/sp_naverpay_sdk.png);
+		background-size: 180px 157px;
+		background-position: 0px -23px;
+		width: 53px;
+		height: 21px;
+	}
+}
+
+/*# sourceMappingURL=naverpay_sdk.css.map */
